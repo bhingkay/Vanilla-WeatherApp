@@ -55,6 +55,7 @@ li {
   padding: 15px;
   border-radius: 10px;
   background-image: url("/images/backgroundpink.gif");
+  background-size: cover;
 }
 
 .temperature {
