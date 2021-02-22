@@ -1,6 +1,6 @@
 body {
   font-family: arial, sans-serif;
-  background-size: cover;
+  background-image: linear-gradient(to right, #ffecd2 0%, #fcb69f 100%);
 }
 
 h1 {
