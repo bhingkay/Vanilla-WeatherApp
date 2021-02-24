@@ -1,6 +1,5 @@
 function formatDate(timestamp) {
   let date = new Date(timestamp);
-
   let days = [
     "Sunday",
     "Monday",
@@ -30,7 +29,7 @@ function formatHours(timestamp) {
 }
 
 function showDetails(response) {
-  console.log(response.data);
+  //console.log(response.data);
   let tempElement = document.querySelector("#temperatureUnit");
   let cityElement = document.querySelector("#show-city");
   let descriptionElement = document.querySelector("#show-detail");
