@@ -9,6 +9,9 @@ h1 {
   line-height: 28px;
   margin: 0;
 }
+
+h3 {
+}
 h5 {
   margin-top: 20px;
   text-align: center;
@@ -53,9 +56,8 @@ li::first-letter {
   margin: 100px auto;
 }
 .weather-app {
-  color: rgb(56, 236, 53);
   padding: 20px 20px;
-  padding-bottom: 200px;
+  padding-bottom: 50px;
   border: 2px solid rgb(252, 34, 34);
   border-radius: 10px;
   background-image: url("../images/backgroundPink.jpg");
@@ -75,6 +77,37 @@ li::first-letter {
   margin-top: 10px;
 }
 
+.weather-forecast {
+  margin-top: 50px;
+  padding-bottom: 10px;
+  border: 1px solid transparent;
+  background-image: linear-gradient(to top, #feada6 0%, #f5efef 100%);
+  border-radius: 10px;
+}
+.weather-forecast h3 {
+  color: rgb(3, 94, 18);
+  text-align: center;
+  font-size: 20px;
+  height: 15px;
+  line-height: 15px;
+  padding-top: 7px;
+}
+.weather-forecast img {
+  display: block;
+  margin: 0 auto;
+  height: 48px;
+  width: 48px;
+}
+
+.weather-forecast-temperature {
+  color: rgb(3, 94, 18);
+  text-align: center;
+  font-size: 15px;
+  font-weight: 400;
+  height: auto;
+  line-height: 15px;
+  white-space: nowrap;
+}
 .units {
   color: #fff;
   position: relative;

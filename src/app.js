@@ -1,13 +1,6 @@
 function formatDate(timestamp) {
   let date = new Date(timestamp);
-  let hours = date.getHours();
-  if (hours < 10) {
-    hours = `0${hours}`;
-  }
-  let minutes = date.getMinutes();
-  if (minutes < 10) {
-    minutes = `0${minutes}`;
-  }
+
   let days = [
     "Sunday",
     "Monday",
@@ -19,7 +12,21 @@ function formatDate(timestamp) {
   ];
   let day = days[date.getDay()];
 
-  return `${day} ${hours}:${minutes}`;
+  return `${day} ${formatHours(timestamp)}`;
+}
+
+function formatHours(timestamp) {
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+
+  return `${hours}:${minutes}`;
 }
 
 function showDetails(response) {
@@ -46,6 +53,30 @@ function showDetails(response) {
   iconElemnent.setAttribute("alt", response.data.weather[0].description);
 }
 
+function displayForecast(response) {
+  let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML = null;
+  let forecast = null;
+
+  for (let index = 0; index < 6; index++) {
+    forecast = response.data.list[index];
+    console.log(forecast);
+    forecastElement.innerHTML += `   
+  <div class="col-2">
+      <h3>${formatHours(forecast.dt * 1000)}</h3>
+      <img
+        src="http://openweathermap.org/img/wn/${
+          forecast.weather[0].icon
+        }@2x.png"/>
+         <div class="weather-forecast-temperature">
+          <strong>${Math.round(forecast.main.temp_max)}°</strong> ${Math.round(
+      forecast.main.temp_min
+    )}°
+        </div>
+   </div>`;
+  }
+}
+
 function search(city) {
   if (city !== "") {
     let apiKey = "a1436310c1d8f47f9c04f28cd4c73311";
@@ -56,6 +87,10 @@ function search(city) {
   } else {
     alert("Please type a city. . . ");
   }
+  apiKey = "a1436310c1d8f47f9c04f28cd4c73311";
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
+
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function handleSearch(event) {
