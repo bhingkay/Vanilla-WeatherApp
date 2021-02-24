@@ -15,8 +15,8 @@ h5 {
   font-size: 15px;
 }
 img {
-  margin-top: 5px;
-  margin-left: 16px;
+  margin-top: -15px;
+  margin-left: 10px;
 }
 
 p {
@@ -60,6 +60,7 @@ li::first-letter {
   border-radius: 10px;
   background-image: url("../images/backgroundPink.jpg");
   background-size: cover;
+  margin-top: -80px;
 }
 
 .temperature {

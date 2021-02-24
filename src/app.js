@@ -30,16 +30,23 @@ function showDetails(response) {
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
   let dateElement = document.querySelector("#date");
+  let iconElemnent = document.querySelector("#icon");
   descriptionElement.innerHTML = response.data.weather[0].description;
   cityElement.innerHTML = response.data.name;
   tempElement.innerHTML = Math.round(response.data.main.temp);
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
+  iconElemnent.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElemnent.setAttribute("alt", response.data.weather[0].description);
 }
 
 let apiKey = "a1436310c1d8f47f9c04f28cd4c73311";
 let apiUnits = "metric";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Manila&appid=${apiKey}&units=${apiUnits}`;
+let city = "manitoba";
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${apiUnits}`;
 
 axios.get(apiUrl).then(showDetails);
