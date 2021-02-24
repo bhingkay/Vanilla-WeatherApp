@@ -62,7 +62,25 @@ function handleSearch(event) {
   search(cityInputElement.value);
 }
 
+function showLocation(position) {
+  //console.log(position);
+  let apiKey = "a1436310c1d8f47f9c04f28cd4c73311";
+  let lat = position.coords.latitude;
+  let lon = position.coords.longitude;
+  let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
+
+  axios.get(url).then(showDetails);
+}
+
+function getCurrentLocation(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(showLocation);
+}
+
 search("Manila");
 
 let searchBtn = document.querySelector("#search-btn");
 searchBtn.addEventListener("click", handleSearch);
+
+let currentLocationBtn = document.querySelector("#current-location-button");
+currentLocationBtn.addEventListener("click", getCurrentLocation);
