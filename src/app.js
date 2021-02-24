@@ -44,9 +44,25 @@ function showDetails(response) {
   iconElemnent.setAttribute("alt", response.data.weather[0].description);
 }
 
-let apiKey = "a1436310c1d8f47f9c04f28cd4c73311";
-let apiUnits = "metric";
-let city = "manitoba";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${apiUnits}`;
+function search(city) {
+  if (city !== "") {
+    let apiKey = "a1436310c1d8f47f9c04f28cd4c73311";
+    let apiUnits = "metric";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${apiUnits}`;
 
-axios.get(apiUrl).then(showDetails);
+    axios.get(apiUrl).then(showDetails);
+  } else {
+    alert("Please type a city. . . ");
+  }
+}
+
+function handleSearch(event) {
+  event.preventDefault();
+  let cityInputElement = document.querySelector("#input-city");
+  search(cityInputElement.value);
+}
+
+search("Manila");
+
+let searchBtn = document.querySelector("#search-btn");
+searchBtn.addEventListener("click", handleSearch);
