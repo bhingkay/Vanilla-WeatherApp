@@ -85,12 +85,6 @@ li::first-letter {
   margin-bottom: 20px;
 }
 
-.footer {
-  margin-left: 255px;
-  margin-top: -100px;
-  font-weight: bold;
-}
-
 .fa-search {
   padding: 0;
   margin: 0;
@@ -115,8 +109,12 @@ li::first-letter {
   width: 90px;
 }
 
+.footer {
+  font-weight: bold;
+}
+
 .vectors {
-  margin-left: 200px;
+  margin-left: 190px;
 }
 
 .weather-temperature .active {
