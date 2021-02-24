@@ -76,6 +76,7 @@ li::first-letter {
 }
 
 .units {
+  color: #fff;
   position: relative;
   top: -28px;
 }
