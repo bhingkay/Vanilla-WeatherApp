@@ -64,9 +64,7 @@ function displayForecast(response) {
   <div class="col-2">
       <h3>${formatHours(forecast.dt * 1000)}</h3>
       <img
-        src="http://openweathermap.org/img/wn/${
-          forecast.weather[0].icon
-        }@2x.png"/>
+        src="images/${forecast.weather[0].icon}.png"/>
          <div class="weather-forecast-temperature">
           <strong>${Math.round(forecast.main.temp_max)}°</strong> ${Math.round(
       forecast.main.temp_min
