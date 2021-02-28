@@ -29,7 +29,7 @@ function formatHours(timestamp) {
 }
 
 function showDetails(response) {
-  //console.log(response.data);
+  console.log(response.data);
   let tempElement = document.querySelector("#temperatureUnit");
   let cityElement = document.querySelector("#show-city");
   let descriptionElement = document.querySelector("#show-detail");
@@ -40,7 +40,7 @@ function showDetails(response) {
 
   celsiusTemp = response.data.main.temp;
   descriptionElement.innerHTML = response.data.weather[0].description;
-  cityElement.innerHTML = response.data.name;
+  cityElement.innerHTML = `${response.data.name},${response.data.sys.country}`;
   tempElement.innerHTML = Math.round(response.data.main.temp);
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);

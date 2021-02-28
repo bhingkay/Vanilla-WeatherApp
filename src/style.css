@@ -81,11 +81,12 @@ li::first-letter {
   margin-top: 50px;
   padding-bottom: 10px;
   border: 1px solid transparent;
-  background-image: linear-gradient(to top, #feada6 0%, #f5efef 100%);
+  background-color: #ca7968;
+  background-image: linear-gradient(315deg, #ca7968 0%, #0c0c0c 74%);
   border-radius: 10px;
 }
 .weather-forecast h3 {
-  color: rgb(3, 94, 18);
+  color: #fff;
   text-align: center;
   font-size: 20px;
   height: 15px;
@@ -100,7 +101,7 @@ li::first-letter {
 }
 
 .weather-forecast-temperature {
-  color: rgb(3, 94, 18);
+  color: #fff;
   text-align: center;
   font-size: 15px;
   font-weight: 400;
@@ -123,6 +124,9 @@ li::first-letter {
   margin: 0;
   color: crimson;
 }
+.form-control {
+  width: 373px;
+}
 
 .btn {
   display: inline-block;
@@ -130,12 +134,10 @@ li::first-letter {
   height: 38px;
 }
 
-.form-control {
-  width: 373px;
-}
-
 .btn-success {
   margin-left: -10px;
+  background-color: rgb(16, 146, 23);
+  border-color: transparent;
 }
 
 .btn-primary {
@@ -157,4 +159,15 @@ li::first-letter {
 
 .weather-temperature .active:hover {
   text-decoration: none;
+}
+
+.currentLocation {
+  width: 100px;
+  height: 100px;
+  margin-left: 20px;
+  margin-top: -20px;
+}
+
+.currentLocation:hover {
+  cursor: pointer;
 }
