@@ -29,7 +29,7 @@ function formatHours(timestamp) {
 }
 
 function showDetails(response) {
-  // console.log(response.data);
+  //console.log(response.data);
   let tempElement = document.querySelector("#temperatureUnit");
   let cityElement = document.querySelector("#show-city");
   let descriptionElement = document.querySelector("#show-detail");
@@ -45,6 +45,7 @@ function showDetails(response) {
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
+
   iconElemnent.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
